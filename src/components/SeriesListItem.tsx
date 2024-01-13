@@ -1,6 +1,6 @@
 import parse from "html-react-parser";
 import { Link } from "react-router-dom";
-import s from "../styles/components/SeriesListItem.module.css";
+import s from "../styles/components/seriesListItem.module.css";
 import { Show } from "../types";
 import Chip from "./Chip";
 
