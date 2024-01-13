@@ -1,4 +1,4 @@
-import s from "../styles/components/SeriesList.module.css";
+import s from "../styles/components/seriesList.module.css";
 import { TVMazeApiArrayResponse, TVMazeApiResponse } from "../types";
 import SeriesListItem from "./SeriesListItem";
 
