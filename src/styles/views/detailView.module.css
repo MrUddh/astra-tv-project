@@ -1,0 +1,71 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem 1.5rem;
+}
+
+.container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.image {
+  flex: 1 1 40%;
+  max-width: 40%;
+  max-height: 650px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.summary {
+  flex: 1 1 55%;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.header {
+  margin: 3rem 0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.title {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+.subtitle {
+  margin: 0;
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.info {
+  margin: 0;
+}
+.backward {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* Use a media query to switch to a column layout for screens smaller than 600px */
+@media (max-width: 850px) {
+  .image,
+  .summary {
+    flex: 1 1 100%; /* take up 100% of the container width */
+    max-width: 100%; /* limit the maximum width to 100% */
+  }
+
+  .image {
+    max-height: 600px;
+  }
+}
