@@ -1,9 +1,5 @@
 import { expect, test } from "vitest";
-import { getRatingStars, logErrorToService, sum } from "../../utils";
-
-test("adds 1 + 2 to equal 3", () => {
-  expect(sum(1, 2)).toBe(3);
-});
+import { getRatingStars, logErrorToService } from "../../utils";
 
 test("logs error to service without throwing", () => {
   const error = new Error("Test error");

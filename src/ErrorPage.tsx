@@ -4,11 +4,6 @@ import {
   useRouteError,
 } from "react-router-dom";
 
-/*
- Anytime the app throws an error while rendering, loading data, or performing data mutations,
- React Router will catch it and render this screen.
-*/
-
 const ErrorPage: React.FC = () => {
   const navigate = useNavigate();
   const error = useRouteError() as Error;

@@ -33,21 +33,20 @@
 - Helper functions that can be used throughout the application.
 
 ### `Styles`:
-
 - Central location for all styling-related files.
+- (This project use css.modules)
 
 ### `Routes`:
 
-- The routes directory contains the routing logic for the application, defining how the application navigates between the SearchView and DetailView. It utilizes React Router.
+- The routes directory contains the routing logic for the application, defining how the application navigates between the SearchView and DetailView. It utilizes React Router. As well as 404 and ErrorElement.
 
 ### `Tests`:
 
 - The tests directory is structured to mirror the src directory. It includes subdirectories for components, views, and utility functions. Each file in these directories have corresponding test files to ensure thorough testing.
+- The project is using Vitest that extends `react-testing-lib`. It's recommended to use the `vitest`-plugin to get a more fine grained handling of tests. That is however not mandatory. `npm run test` works fine as well
 
 ## To run the test for the project run the following
 
 ```bash
 npm run test
 ```
-
-- This project is built with Vite so it will run the vitest for you.

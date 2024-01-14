@@ -16,7 +16,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         onError={logErrorToService}
       >
         <RouterProvider router={router} />
-        {/* <TestErrorComponent /> */}
       </ErrorBoundary>
     </QueryClientProvider>
   </React.StrictMode>

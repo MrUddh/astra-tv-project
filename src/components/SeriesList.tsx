@@ -11,7 +11,7 @@ const SeriesList: React.FC<SeriesListProps> = ({ series }) => {
     <ul className={s.list}>
       {series?.map((serie: TVMazeApiResponse) => (
         <li key={serie?.show?.id}>
-          <SeriesListItem {...serie.show} />
+          <SeriesListItem {...serie?.show} />
         </li>
       ))}
     </ul>

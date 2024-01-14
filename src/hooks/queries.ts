@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { tvMazeApi } from "../services/tvMazeApi";
 
 const SERIES_CACHE_KEY = "series";
@@ -9,7 +9,12 @@ export const useGetSeries = (query: string) => {
     queryKey: [SERIES_CACHE_KEY, query],
     queryFn: () => tvMazeApi.getSearchSeries(query),
     enabled: query !== "",
-  });
+    onError: (error: Error) => {
+      //TODO: Implement logging to a service. eg. "Sentry".
+      console.error("Error fetching series:", error);
+    },
+    staleTime: 1000 * 60 * 10,
+  } as UseQueryOptions);
 };
 
 export const useGetSingleSerie = (query: string) => {
@@ -17,5 +22,10 @@ export const useGetSingleSerie = (query: string) => {
     queryKey: [SINGLE_SERIE_CACHE_KEY, query],
     queryFn: () => tvMazeApi.getSingleSerie(query),
     enabled: query !== "",
-  });
+    onError: (error: Error) => {
+      //TODO: Implement logging to a service. eg. "Sentry".
+      console.error("Error fetching single series:", error);
+    },
+    staleTime: 1000 * 60 * 10,
+  } as UseQueryOptions);
 };

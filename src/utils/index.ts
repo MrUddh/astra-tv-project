@@ -8,6 +8,3 @@ export function getRatingStars(rating: number, limit = 5) {
     limit * 2 - rating
   );
 }
-export function sum(a: number, b: number) {
-  return a + b;
-}

@@ -1,16 +1,31 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import ErrorPage from "../ErrorPage";
-import DetailView from "../views/DetailView";
-import SearchView from "../views/SearchView";
+import PageNotFound from "../404";
+
+const ErrorPage = lazy(() => import("../ErrorPage"));
+const DetailView = lazy(() => import("../views/DetailView"));
+const SearchView = lazy(() => import("../views/SearchView"));
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <SearchView />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchView />
+      </Suspense>
+    ),
     errorElement: <ErrorPage />,
   },
   {
     path: "/details/:id",
-    element: <DetailView />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <DetailView />
+      </Suspense>
+    ),
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ]);
