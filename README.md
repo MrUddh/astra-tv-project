@@ -2,6 +2,8 @@
 
 ### Here is a link to the project hosted on Vercel: [Astra TV-Series](https://astra-tv-project-89yr.vercel.app/)
 
+> Astra TV-series is a web application built with React, TypeScript, and Vite. It provides a user-friendly interface to browse and explore various TV series. Leveraging modern web technologies, the project offers fast performance, reusable components, and strong type safety. Hosted on Vercel
+
 - To get started, make sure you have node installed and a minimum version of `v12.0.0` to be able to run the project. (But to be able to also run the Vite test client you need at least `v18.0.0`.)
 
 - Clone this repo and run:
