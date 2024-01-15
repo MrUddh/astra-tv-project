@@ -55,3 +55,34 @@
 ```bash
 npm run test
 ```
+
+## Lazy Loading
+
+In this application, i use React's `lazy` and `Suspense` features to lazily load components. This means that some components, like `ErrorPage`, `DetailView`, and `SearchView`, are not loaded until they are actually needed, which can help improve the performance of the application.
+
+Here's an example of how i do this:
+
+```javascript
+import { lazy, Suspense } from "react";
+import { createBrowserRouter } from "react-router-dom";
+import PageNotFound from "../404";
+
+const ErrorPage = lazy(() => import("../ErrorPage"));
+const DetailView = lazy(() => import("../views/DetailView"));
+const SearchView = lazy(() => import("../views/SearchView"));
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchView />
+      </Suspense>
+    ),
+    errorElement: <ErrorPage />,
+  },
+  /*... 
+      More code
+                ...*/
+]);
+```
