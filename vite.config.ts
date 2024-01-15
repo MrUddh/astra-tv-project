@@ -17,5 +17,5 @@ export default defineConfig({
       localsConvention: "camelCaseOnly",
     },
   },
-  base: "/",
+  base: "/astra-tv-project/",
 });
