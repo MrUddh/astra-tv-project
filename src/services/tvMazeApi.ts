@@ -1,10 +1,14 @@
-import { TvMazeApi } from "../types";
+import {
+  SingleSerieResponse,
+  TVMazeApiArrayResponse,
+  TvMazeApi,
+} from "../types";
 const BASE_URL = "https://api.tvmaze.com";
 
 let controller: AbortController | undefined;
 
 export const tvMazeApi: TvMazeApi = {
-  getSearchSeries: async (query: string) => {
+  getSearchSeries: async (query: string): Promise<TVMazeApiArrayResponse> => {
     if (!query) {
       throw new Error("Query must be provided");
     }
@@ -29,10 +33,11 @@ export const tvMazeApi: TvMazeApi = {
         console.error(error);
         throw error;
       }
+      return [];
     }
   },
 
-  getSingleSerie: async (query: string) => {
+  getSingleSerie: async (query: string): Promise<SingleSerieResponse> => {
     if (!query) {
       throw new Error("Query-id must be provided");
     }
@@ -57,6 +62,7 @@ export const tvMazeApi: TvMazeApi = {
         console.error(error);
         throw error;
       }
+      return null;
     }
   },
 };

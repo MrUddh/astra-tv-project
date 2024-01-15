@@ -79,7 +79,7 @@ interface Href {
 }
 
 export type TVMazeApiArrayResponse = TVMazeApiResponse[];
-export type SingleSerieResponse = Show;
+export type SingleSerieResponse = Show | null;
 
 export type TvMazeApi = {
   getSearchSeries: (query: string) => Promise<TVMazeApiArrayResponse>;
