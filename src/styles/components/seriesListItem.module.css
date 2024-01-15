@@ -33,6 +33,11 @@
   transition: opacity 0.5s ease;
   padding: 1rem;
   overflow: scroll;
+  scrollbar-width: none;
+}
+
+.info::-webkit-scrollbar {
+  display: none;
 }
 
 .item:hover .info {

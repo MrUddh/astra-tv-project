@@ -3,7 +3,7 @@ import SearchBar from "../components/SearchBar";
 import { useGetSeries } from "../hooks/queries";
 import s from "../styles/views/searchView.module.css";
 import { TVMazeApiArrayResponse } from "../types";
-const SeriesList = lazy(() => import("../components/SeriesList"));
+const SeriesList = lazy(() => import("../components/SeriesList/SeriesList"));
 
 const SearchView = () => {
   const initialSearchQuery = localStorage.getItem("searchQuery") || "";

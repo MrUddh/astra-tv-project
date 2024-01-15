@@ -1,8 +1,8 @@
 import parse from "html-react-parser";
 import { Link } from "react-router-dom";
-import s from "../styles/components/seriesListItem.module.css";
-import { Show } from "../types";
-import Chip from "./Chip";
+import s from "../../styles/components/seriesListItem.module.css";
+import { Show } from "../../types";
+import Chip from "../Chip";
 
 const SeriesListItem = ({ id, name, summary, image, genres }: Show) => {
   const arrowIcon = String.fromCharCode(parseInt("276F", 16));

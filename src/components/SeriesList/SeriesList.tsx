@@ -1,5 +1,5 @@
-import s from "../styles/components/seriesList.module.css";
-import { TVMazeApiArrayResponse, TVMazeApiResponse } from "../types";
+import s from "../../styles/components/seriesList.module.css";
+import { TVMazeApiArrayResponse, TVMazeApiResponse } from "../../types";
 import SeriesListItem from "./SeriesListItem";
 
 interface SeriesListProps {
