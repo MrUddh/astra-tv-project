@@ -40,11 +40,5 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vitest": "^1.2.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run test"
-    }
   }
 }

@@ -86,3 +86,11 @@ export const router = createBrowserRouter([
                 ...*/
 ]);
 ```
+
+## Using Husky for Git Hooks
+
+This project uses [Husky](https://typicode.github.io/husky/#/) to manage Git hooks. Git hooks are scripts that run automatically when certain Git events occur.
+
+Husky is configured to run `npm run lint` before each commit and `npm run test` before each push. This ensures that all changes are validated for coding style issues (linting) and all tests pass before they are committed or pushed to the repository.
+
+This helps maintain code quality and prevent introduction of errors or inconsistencies.
