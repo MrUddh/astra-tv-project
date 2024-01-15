@@ -9,6 +9,10 @@ import { getRatingStars } from "../utils";
 const DetailView = () => {
   const { id = "" } = useParams<{ id: string }>();
   const { data: serie, isLoading, isError } = useGetSingleSerie(id);
+  /*TODO: 
+  For unknown reason at this point:
+  The hosted version that is on Vercel is not picking up direct links to the details page.
+  This does however work as intended locally. */
 
   if (isError) {
     return <div>Error loading data</div>;

@@ -5,27 +5,35 @@ import { setupServer } from "msw/node";
 import SearchView from "../../views/SearchView";
 
 const server = setupServer(
-  http.get("https://api.tvmaze.com/search/shows?q=boys", () => {
-    return HttpResponse.json([
-      {
-        score: 0.86515516,
-        show: {
-          id: 31910,
-          name: "Boys",
-          genres: ["Drama"],
-          summary: "<p>A story of two boys looking for their identity...</p>",
+  http.get("https://api.tvmaze.com/search/shows", ({ request }) => {
+    const url = new URL(request.url);
+    const query = url.searchParams.get("q");
+
+    if (!query) {
+      return new HttpResponse(null, { status: 404 });
+    }
+    if (query === "boys") {
+      return HttpResponse.json([
+        {
+          score: 0.86515516,
+          show: {
+            id: 31910,
+            name: "Boys",
+            genres: ["Drama"],
+            summary: "<p>A story of two boys looking for their identity...</p>",
+          },
         },
-      },
-      {
-        score: 15299,
-        show: {
-          id: 15299,
-          name: "The Boys",
-          genres: ["Drama", "Action", "Science-Fiction"],
-          summary: "<p>A story of more boys looking for their car...</p>",
+        {
+          score: 15299,
+          show: {
+            id: 15299,
+            name: "The Boys",
+            genres: ["Drama", "Action", "Science-Fiction"],
+            summary: "<p>A story of more boys looking for their car...</p>",
+          },
         },
-      },
-    ]);
+      ]);
+    }
   })
 );
 

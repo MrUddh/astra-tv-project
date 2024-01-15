@@ -1,14 +1,35 @@
-import { expect, test } from "vitest";
+import { expect } from "vitest";
 import { getRatingStars, logErrorToService } from "../../utils";
 
-test("logs error to service without throwing", () => {
-  const error = new Error("Test error");
-  expect(() => logErrorToService(error)).not.toThrow();
-});
+describe("Utils", () => {
+  it("logs error to service", () => {
+    const consoleLogMock = vi
+      .spyOn(console, "log")
+      .mockImplementation(() => undefined);
 
-test("Returns 5 stars", () => {
-  expect(getRatingStars(5)).toBe("★★★★★");
-});
-test("Returns 2 stars and 3 empty", () => {
-  expect(getRatingStars(2)).toBe("★★☆☆☆");
+    const consoleErrorMock = vi
+      .spyOn(console, "error")
+      .mockImplementation(() => undefined);
+
+    const error = new Error();
+    logErrorToService(error);
+    expect(consoleLogMock).toHaveBeenCalledWith("Error logged to service");
+
+    consoleLogMock.mockRestore();
+    consoleErrorMock.mockRestore();
+  });
+
+  it("throws an error", () => {
+    const error = new Error("Test error");
+    const fn = () => {
+      throw error;
+    };
+    expect(fn).toThrowError("Test error");
+  });
+  it("Returns 5 stars", () => {
+    expect(getRatingStars(5)).toBe("★★★★★");
+  });
+  it("Returns 2 stars and 3 empty", () => {
+    expect(getRatingStars(2)).toBe("★★☆☆☆");
+  });
 });
