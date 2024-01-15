@@ -15,12 +15,13 @@
   flex: 1 1 40%;
   max-width: 40%;
   max-height: 650px;
-  object-fit: contain;
+  object-fit: cover;
   margin: 0 auto;
+  border-radius: 1rem;
 }
 
 .summary {
-  flex: 1 1 55%;
+  flex: 1 1 50%;
   max-width: 700px;
   padding: 0 1rem;
 }

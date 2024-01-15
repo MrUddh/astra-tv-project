@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import SearchBar from "../components/SearchBar";
 import { useGetSeries } from "../hooks/queries";
 import s from "../styles/views/searchView.module.css";
+import { TVMazeApiArrayResponse } from "../types";
 const SeriesList = lazy(() => import("../components/SeriesList"));
 
 const SearchView = () => {
@@ -41,7 +42,7 @@ const SearchView = () => {
         )}
         <nav>
           <Suspense fallback={<div>Loading...</div>}>
-            {series && <SeriesList series={series} />}
+            <SeriesList series={series as TVMazeApiArrayResponse} />
           </Suspense>
         </nav>
       </div>

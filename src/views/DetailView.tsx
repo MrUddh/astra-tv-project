@@ -61,7 +61,7 @@ const DetailView = () => {
               ))}
             </div>
 
-            <p>{parse(summary || "")}</p>
+            {summary && <p>{parse(summary)}</p>}
           </div>
           {type && (
             <p className={s.info}>
