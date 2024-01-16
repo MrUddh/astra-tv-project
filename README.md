@@ -94,3 +94,20 @@ This project uses [Husky](https://typicode.github.io/husky/#/) to manage Git hoo
 Husky is configured to run `npm run lint` before each commit and `npm run test` before each push. This ensures that all changes are validated for coding style issues (linting) and all tests pass before they are committed or pushed to the repository.
 
 This helps maintain code quality and prevent introduction of errors or inconsistencies.
+
+## The Next Steps:
+
+> "If I had more time to put into the project."
+
+- **Improve Loading State Feedback:** Currently, the loading state is taken into consideration, but they are not visually appealing for the user. That would be something I would improve upon.
+
+- **Expand Test Coverage:** While there are some tests in place (as seen in `src/tests/views/searchView.test.tsx`, for example), I would add more tests to cover other components and views. This would help ensure the reliability of the code. I could also add e.g [Playwright](https://playwright.dev/) to the project to set set up som robust E2E-testing.
+
+- **Enhance Accessibility:** Ensure that the application is accessible to all users. This could involve adding appropriate `aria-labels`, ensuring sufficient color contrast, and making sure all interactive elements are keyboard-accessible.
+
+- **Add More Features:** For example, I could add user authentication, allow users to save their favorite TV series, or provide recommendations based on user preferences.
+
+- **Optimize Performance:** The `README.md` mentions the use of React's `lazy` and `Suspense` for lazy loading components. I could extend this practice to other parts of the application to improve performance, for example.
+
+- **Refactor Code:** There's always room for improvement! Review the code for any opportunities to refactor or improve it. This could involve breaking large components into smaller ones, or renaming variables and functions for clarity.
+
